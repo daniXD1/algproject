@@ -1,2 +1,7 @@
 .vscode
+<<<<<<< HEAD
 out/
+=======
+a.out
+.exe
+>>>>>>> 3a1eed6da15e13df4fad19719d60c184ac49a1c7
