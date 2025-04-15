@@ -3,7 +3,7 @@
 
 int main(){
     double r=getResolution();
-    printf("Resolution: %f\n", r);
+    printf("Resolution: %lf\n", r);
     
     return 0;
 }

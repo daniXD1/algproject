@@ -1,18 +1,20 @@
 #ifndef ALGPROGLIB_H
 #define ALGPROGLIB_H
 
-#include <time.h>
+typedef struct timespec timespec;
 
-double measure_function_run(void *f, unsigned int *arr, unsigned int len);
+double measure_function_run(void *f, int *arr, unsigned int len);
 
 double getResolution();
-double duration(struct timespec start, struct timespec end);
+double duration(timespec start, timespec end);
 
-void countingSort(unsigned int arr[], unsigned int n);
-void mergeSort(unsigned int arr[], unsigned int n);
-void quickSort(unsigned int arr[], unsigned int n);
-void quickSort3Way(unsigned int arr[], unsigned int n);
-void insertionSort(unsigned int arr[], unsigned int n);
-void heapSort(unsigned int arr[], unsigned int n);
+double* measure_batch(void *f, int arr_len, unsigned int batch_size);
+
+void countingSort(int arr[], unsigned int n);
+void mergeSort(int arr[], unsigned int n);
+void quickSort(int arr[], unsigned int n);
+void quickSort3Way(int arr[], unsigned int n);
+void insertionSort(int arr[], unsigned int n);
+void heapSort(int arr[], unsigned int n);
 
 #endif

@@ -1,9 +1,11 @@
+#define _POSIX_C_SOURCE 199309L
 #include "lib.h"
+#include <time.h>
 
-double measure_function_run(void *f, unsigned int *arr, unsigned int len){
-    struct timespec start, end;
+double measure_function_run(void *f, int *arr, unsigned int len){
+    timespec start, end;
     clock_gettime(CLOCK_MONOTONIC, &start);
-    ((void (*)(unsigned int *, unsigned int))f)(arr, len);
+    ((void (*)(int *, unsigned int))f)(arr, len);
     clock_gettime(CLOCK_MONOTONIC, &end);
 
     double elapsed = (end.tv_nsec - start.tv_nsec);
@@ -11,12 +13,12 @@ double measure_function_run(void *f, unsigned int *arr, unsigned int len){
     return elapsed;
 }
 
-double duration(struct timespec start, struct timespec end) {
+double duration(timespec start, timespec end) {
     return end.tv_sec - start.tv_sec 
            + ((end.tv_nsec - start.tv_nsec ) / (double) 1000000000.0);
 }
 double getResolution() {
-    struct timespec start, end;
+    timespec start, end;
     clock_gettime(CLOCK_MONOTONIC, &start);
     do {
         clock_gettime(CLOCK_MONOTONIC, &end);
