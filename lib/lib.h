@@ -22,6 +22,7 @@ int* gen_array_by_different_elements(int n);
 int arr_len(int *arr);
 
 void write_dataline(FILE *file, double time, int data);
+int write_logfile(char *s, double *times);
 
 void countingSort(int *arr, unsigned int n);
 void mergeSort(int *arr, unsigned int n);
