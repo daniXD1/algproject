@@ -1,6 +1,6 @@
 #include "../lib.h"
 
-void insertionSort(int arr[], int n) {
+void insertionSort(int *arr, unsigned int n) {
     int i;
 
     for (i = 1; i < n; i++) {

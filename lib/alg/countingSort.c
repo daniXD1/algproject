@@ -1,6 +1,6 @@
 #include "../lib.h"
 
-void countingSort(int arr[], int n) {
+void countingSort(int *arr, unsigned int n) {
     int max = arr[0];
     int i;
 
@@ -10,8 +10,7 @@ void countingSort(int arr[], int n) {
         }
     }
 
-    int count[max + 1];
-    memset(count, 0, sizeof(count));
+    unsigned int *count=calloc(max+1, sizeof(int));
 
     for (i = 0; i < n; i++) {
         count[arr[i]]++;

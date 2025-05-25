@@ -1,13 +1,12 @@
 #include "../lib.h"
 
-
 void swap(int* a, int* b) {
     int temp = *a;
     *a = *b;
     *b = temp;
 }
 
-int partition(int arr[], int low, int high) {
+int partition(int *arr, int low, int high) {
     int pivot = arr[high];
     int i = low - 1;
     int j;
@@ -22,11 +21,7 @@ int partition(int arr[], int low, int high) {
     return i + 1;
 }
 
-void quickSort(int arr[], int n){
-    quickSort_rec(arr, 0, n - 1);
-}
-
-void quickSort_rec(int arr[], int low, int high) {
+void quickSort_rec(int *arr, int low, int high) {
     if (low < high) {
         int pi = partition(arr, low, high);
 
@@ -34,3 +29,8 @@ void quickSort_rec(int arr[], int low, int high) {
         quickSort_rec(arr, pi + 1, high);
     }
 }
+
+void quickSort(int *arr, unsigned int n){
+    quickSort_rec(arr, 0, n - 1);
+}
+

@@ -1,6 +1,6 @@
 #include "../lib.h"
 
-void heapify(int arr[], int n, int i) {
+void heapify(int *arr, int n, int i) {
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -22,7 +22,7 @@ void heapify(int arr[], int n, int i) {
     }
 }
 
-void heapSort(int arr[], int n) {
+void heapSort(int *arr, unsigned int n) {
     int i;
     
     for (i = n / 2 - 1; i >= 0; i--) {

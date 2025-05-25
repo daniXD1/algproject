@@ -1,6 +1,6 @@
 #include "../lib.h"
 
-void merge(int arr[], int left, int mid, int right) {
+void merge(int *arr, int left, int mid, int right) {
     int n1 = mid - left + 1;
     int n2 = right - mid;
 
@@ -44,11 +44,7 @@ void merge(int arr[], int left, int mid, int right) {
     }
 }
 
-void mergeSort(int arr[], int n) {
-    mergeSort_rec(arr, 0, n - 1);
-}
-
-void mergeSort_rec(int arr[], int left, int right) {
+void mergeSort_rec(int *arr, int left, int right) {
     if (left < right) {
         int mid = left + (right - left) / 2;
 
@@ -57,4 +53,8 @@ void mergeSort_rec(int arr[], int left, int right) {
 
         merge(arr, left, mid, right);
     }
+}
+
+void mergeSort(int *arr, unsigned int n) {
+    mergeSort_rec(arr, 0, n - 1);
 }
