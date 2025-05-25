@@ -2,11 +2,11 @@
 #include <time.h>
 
 double duration(timespec start, timespec end) {
-    return end.tv_sec - start.tv_sec 
-           + ((end.tv_nsec - start.tv_nsec ) / (double) 1000000000.0);
+    //return end.tv_sec - start.tv_sec + ((end.tv_nsec - start.tv_nsec ) / (double) 1000000000.0);
+    return (end.tv_nsec - start.tv_nsec);
 }
 
-double measure_function_run(void *f, int *arr, int len){
+double measure_function_run(void (*f)(int *, int), int *arr, int len){
     timespec start, end;
     clock_gettime(CLOCK_MONOTONIC, &start);
     ((void (*)(int *, unsigned int))f)(arr, len);
@@ -22,6 +22,6 @@ double getResolution() {
     clock_gettime(CLOCK_MONOTONIC, &start);
     do {
         clock_gettime(CLOCK_MONOTONIC, &end);
-    } while (duration(start, end) == 0.0);
+    } while (duration(start, end) == (double) 0.0);
     return duration(start, end);
 }
