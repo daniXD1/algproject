@@ -13,16 +13,16 @@ typedef struct timespec timespec;
 
 double getResolution();
 
-double measure_function_run(void (*f)(int *, int), int *arr, int len);
-double* measure_batch(void *f, unsigned int parameter, unsigned int batch_size, int *generator_function);
+double measure_function_run(void (*f)(int *, unsigned int), int *arr, int len);
+double* measure_batch(void (*f)(int *, unsigned int), unsigned int parameter, unsigned int batch_size, int * (*generator_function)(int));
 
 int* gen_array_simple(int len);
 int* gen_array_by_value_range(int range);
 int* gen_array_by_different_elements(int n);
 int arr_len(int *arr);
 
-void write_dataline(FILE *file, double time, int data);
-int write_logfile(char *s, double *times);
+void write_dataline(FILE *file, double time);
+int write_logfile(char *s, double *times, unsigned int n);
 
 void countingSort(int *arr, unsigned int n);
 void mergeSort(int *arr, unsigned int n);

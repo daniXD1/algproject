@@ -6,7 +6,7 @@ double duration(timespec start, timespec end) {
     return (end.tv_nsec - start.tv_nsec);
 }
 
-double measure_function_run(void (*f)(int *, int), int *arr, int len){
+double measure_function_run(void (*f)(int *, unsigned int), int *arr, int len){
     timespec start, end;
     clock_gettime(CLOCK_MONOTONIC, &start);
     ((void (*)(int *, unsigned int))f)(arr, len);
