@@ -1,17 +1,17 @@
 #include "../lib.h"
 
 void insertionSort(int *arr, unsigned int n) {
-    int i;
+    int j;
 
-    for (i = 1; i < n; i++) {
-        int key = arr[i];
-        int j = i - 1;
-
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
+    for (j = 2; j < n; j++) {
+        int i = j - 1;
+        int key = arr[j];
+        
+        while (j > 0 && arr[i] > key) {
+            arr[i + 1] = arr[i];
+            i--;
         }
         
-        arr[j + 1] = key;
+        arr[i + 1] = key;
     }
 }

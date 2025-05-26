@@ -17,7 +17,9 @@ int partition(int *arr, int low, int high) {
             swap(&arr[i], &arr[j]);
         }
     }
+
     swap(&arr[i + 1], &arr[high]);
+    
     return i + 1;
 }
 
@@ -33,4 +35,3 @@ void quickSort_rec(int *arr, int low, int high) {
 void quickSort(int *arr, unsigned int n){
     quickSort_rec(arr, 0, n - 1);
 }
-
