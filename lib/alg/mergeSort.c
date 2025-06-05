@@ -6,7 +6,8 @@ void merge(int *arr, int left, int mid, int right) {
     int half1 = mid - left + 1;
     int half2 = right - mid;
 
-    int L[half1], R[half2];
+    int *L = (int *)malloc(half1 * sizeof(int));
+    int *R = (int *)malloc(half2 * sizeof(int));
 
     int i;
     int j;
@@ -45,6 +46,9 @@ void merge(int *arr, int left, int mid, int right) {
         j++;
         k++;
     }
+    
+    free(L);
+    free(R);
 }
 
 
