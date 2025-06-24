@@ -2,3 +2,4 @@
 ./.vscode/*
 out/
 .vscode/settings.json
+lib/lib.so
