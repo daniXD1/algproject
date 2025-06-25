@@ -1,5 +1,4 @@
 #include "./lib/lib.h"
-#include "./utils/utils.h"
 #include <stdio.h>
 #include <time.h>
 
