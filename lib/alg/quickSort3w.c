@@ -1,11 +1,5 @@
 #include "../lib.h"
 
-void swap3w(int* a, int* b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
 void partition3Way(int* arr, int low, int high, int* lt, int* gt) {
     int pivot = arr[high];
     int j = low;
@@ -13,17 +7,17 @@ void partition3Way(int* arr, int low, int high, int* lt, int* gt) {
     while (j < *gt) {
         if (arr[j] < pivot) {
             (*lt)++;
-            swap3w(&arr[*lt], &arr[j]);
+            swap(&arr[*lt], &arr[j]);
             j++;
         } else if (arr[j] > pivot) {
             (*gt)--;
-            swap3w(&arr[*gt], &arr[j]);
+            swap(&arr[*gt], &arr[j]);
         } else {
             j++;
         }
     }
 
-    swap3w(&arr[*gt], &arr[high]);
+    swap(&arr[*gt], &arr[high]);
     (*gt)++;
 }
 

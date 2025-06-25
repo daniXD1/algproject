@@ -40,4 +40,6 @@ void quickSort3Way(int *arr, unsigned int n);
 void insertionSort(int *arr, unsigned int n);
 void heapSort(int *arr, unsigned int n);
 
+void swap(int* a, int* b);
+
 #endif

@@ -38,7 +38,7 @@ int main(){
     double n=(double)min_param;
     while(n < max_param){
         printf("Current parameter: %lf\n", n);
-        double *times = measure_batch(insertionSort, (unsigned int)n, batch_size, generator_function);
+        double *times = measure_batch(quickSort3Way, (unsigned int)n, batch_size, generator_function);
         char *fname=calloc(100, sizeof(char));
         sprintf(fname, logfile_format, "insertionSort", (unsigned int)n);
         write_logfile(fname, times, batch_size, (unsigned int)n, generator_id);

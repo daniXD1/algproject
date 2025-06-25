@@ -1,12 +1,6 @@
 #include "../lib.h"
 #define N_GROUPS 5
 
-void swap(int* a, int* b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
 int firstOccurrence(int arr[], int low, int high, int value) {
     int i = low;
     while(i <= high){
@@ -20,7 +14,7 @@ int firstOccurrence(int arr[], int low, int high, int value) {
     return high;
 }
 
-int partition(int arr[], int low, int high, int pivot) {
+int partitionMedians(int arr[], int low, int high, int pivot) {
     int pos = firstOccurrence(arr, low, high, pivot);
     swap(&arr[pos], &arr[high]);
     
@@ -99,7 +93,7 @@ int medianOfMedians(int arr[], int low, int high) {
 void quickSortMedian_rec(int arr[], int low, int high) {
     if (low < high) {
         int pi = medianOfMedians(arr, low, high);
-        int r = partition(arr, low, high, pi);
+        int r = partitionMedians(arr, low, high, pi);
         quickSortMedian_rec(arr, low, r - 1);
         quickSortMedian_rec(arr, r + 1, high);
     }
