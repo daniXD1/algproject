@@ -43,12 +43,10 @@ int partition(int arr[], int low, int high, int pivot) {
 int findMedian(int arr[], int start, int size) {
     int i, j;
     int greater, minor, equals;
-    int greater, minor, equals;
 
     for (i = start; i < start + size; i++) {
         greater = 0;
         minor = 0;
-        equals = 0;
         equals = 0;
         
         for (j = start; j < start + size; j++){
@@ -58,16 +56,9 @@ int findMedian(int arr[], int start, int size) {
                 greater++;
             } else {
                 minor++;
-            if(arr[j] == arr[i]) {
-                equals++;
-            } else if (arr[j] > arr[i]) {
-                greater++;
-            } else {
-                minor++;
             }
         }
 
-        if (greater - minor <= equals) {
         if (greater - minor <= equals) {
             return arr[i];
         }
@@ -84,7 +75,6 @@ int medianOfMedians(int arr[], int low, int high) {
     }
     
     int numGroups = ceil(size / N_GROUPS);
-    int numGroups = ceil(size / N_GROUPS);
     int *medians = (int *)malloc(numGroups * sizeof(int));
     int i;
     
@@ -95,17 +85,10 @@ int medianOfMedians(int arr[], int low, int high) {
         if (groupEnd > high) {
             groupEnd = high;
         }
-        int groupStart = low + i * N_GROUPS;
-        int groupEnd = groupStart + N_GROUPS - 1;
-        
-        if (groupEnd > high) {
-            groupEnd = high;
-        }
         
         medians[i] = findMedian(arr, groupStart, groupEnd - groupStart + 1);
     }
 
-    if (numGroups > N_GROUPS) {
     if (numGroups > N_GROUPS) {
         return medianOfMedians(medians, 0, numGroups);
     }
