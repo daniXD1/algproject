@@ -32,7 +32,7 @@ int arr_len(int *arr);
 void write_dataline(FILE *file, double time);
 int write_logfile(char *name, double *times, unsigned int n, unsigned int parameter, unsigned short generator_function);
 
-void countingSort(int *arr, unsigned int n, unsigned int range);
+void countingSort(int *arr, unsigned int n);
 void mergeSort(int *arr, unsigned int n);
 void quickSort(int *arr, unsigned int n);
 void quickSort3Way(int *arr, unsigned int n);
