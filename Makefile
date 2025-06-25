@@ -1,9 +1,9 @@
-all: build
 
-build:
-	@echo "Building chronometer..."
-	gcc -o out/chronometer chronometer.c lib/*.c lib/alg/*.c -I. -Wall
-	@echo "Build finished."
+build_chronometer: chronometer.c
+	gcc chronometer.c -Wall -O0 -L./lib -l:lib.so -o ./out/chronometer
+
+run:
+	LD_LIBRARY_PATH=./lib ./out/chronometer
 
 clean:
-	@rm out/*
+	rm -f ./out/*

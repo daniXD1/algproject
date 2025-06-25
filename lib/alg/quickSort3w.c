@@ -13,17 +13,17 @@ void partition3Way(int* arr, int low, int high, int* lt, int* gt) {
     while (j < *gt) {
         if (arr[j] < pivot) {
             (*lt)++;
-            swap(&arr[*lt], &arr[j]);
+            swap3w(&arr[*lt], &arr[j]);
             j++;
         } else if (arr[j] > pivot) {
             (*gt)--;
-            swap(&arr[*gt], &arr[j]);
+            swap3w(&arr[*gt], &arr[j]);
         } else {
             j++;
         }
     }
 
-    swap(&arr[*gt], &arr[high]);
+    swap3w(&arr[*gt], &arr[high]);
     (*gt)++;
 }
 

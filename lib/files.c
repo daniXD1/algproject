@@ -37,6 +37,7 @@ int write_logfile(char *name, double *times, unsigned int n, unsigned int parame
     for(int i=0; i<n; i++){
         write_dataline(f, times[i]);
     }
+    fclose(f);
     return 0;
 }
 
@@ -50,5 +51,6 @@ int write_logfile_raw(char *name, double *times, unsigned int n){
     for(int i=0; i<n; i++){
         write_dataline(f, times[i]);
     }
+    fclose(f);
     return 0;
 }

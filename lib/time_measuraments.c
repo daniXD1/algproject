@@ -2,8 +2,7 @@
 #include <time.h>
 
 double duration(timespec start, timespec end) {
-    //return end.tv_sec - start.tv_sec + ((end.tv_nsec - start.tv_nsec ) / (double) 1000000000.0);
-    return (end.tv_nsec - start.tv_nsec);
+    return (end.tv_sec - start.tv_sec)*1000 + ((end.tv_nsec - start.tv_nsec ) / (double) 1000000);
 }
 
 double measure_function_run(void (*f)(int *, unsigned int), int *arr, int len){
