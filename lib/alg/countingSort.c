@@ -1,9 +1,22 @@
 #include "../lib.h"
 
-void countingSort(int *arr, unsigned int n, unsigned int range) {
-    //cambiare la firma della funzione per passare range e elemento minimo (o anche solo range)
+int getMax(int *arr, int n){
+    int i = 0;
+    int max = arr[0];
     
+    for (i = 1; i < n; i++) {
+        if(arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    return max;
+}
+
+void countingSort(int *arr, unsigned int n) {
     int i;
+
+    int range = getMax(arr, n);
 
     int *occurr = (int *)malloc((range + 1) * sizeof(int));
     int *sorted = (int *)malloc(n * sizeof(int));
