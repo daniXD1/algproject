@@ -8,8 +8,9 @@
 int min_param = 100;
 int max_param = 1000000;
 //double exponential_step =1.3593563908785256228; // For 30 points
-double exponential_step = 1.58489319246111348520210137339150701326944213382503906831629681231665686366; // For 20 points
-unsigned int batch_size = 20;
+//double exponential_step = 1.58489319246111348520210137339150701326944213382503906831629681231665686366; // For 20 points
+double exponential_step = 1.09749876549305610989775307413179551147080372752868932886445899804013989385; // For 100
+unsigned int batch_size = 10;
 int generator_id = GEN_ARRAY_SIMPLE; // Change this to test different generators
 char *logfile_format = "out/log-%s-%06d.txt";
 

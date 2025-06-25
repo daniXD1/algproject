@@ -28,7 +28,7 @@ class batch:
         return s
 
 
-def parse_file(f) -> (batch, int, int, str):
+def parse_file(f):
     batch_size=int(f.readline().split(':')[1].strip())
     batch_parameter=int(f.readline().split(':')[1].strip())
     gen_function=f.readline().split(':')[1].strip()
