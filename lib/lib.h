@@ -35,6 +35,7 @@ int write_logfile(char *name, double *times, unsigned int n, unsigned int parame
 void countingSort(int *arr, unsigned int n, unsigned int range);
 void mergeSort(int *arr, unsigned int n);
 void quickSort(int *arr, unsigned int n);
+void quickSortMedian(int *arr, unsigned int n);
 void quickSort3Way(int *arr, unsigned int n);
 void insertionSort(int *arr, unsigned int n);
 void heapSort(int *arr, unsigned int n);

@@ -96,15 +96,15 @@ int medianOfMedians(int arr[], int low, int high) {
     return findMedian(medians, 0, numGroups);
 }
 
-void quickSort(int arr[], int low, int high) {
+void quickSortMedian_rec(int arr[], int low, int high) {
     if (low < high) {
         int pi = medianOfMedians(arr, low, high);
         int r = partition(arr, low, high, pi);
-        quickSort(arr, low, r - 1);
-        quickSort(arr, r + 1, high);
+        quickSortMedian_rec(arr, low, r - 1);
+        quickSortMedian_rec(arr, r + 1, high);
     }
 }
 
-void quickSort(int *arr, unsigned int n){
-    quickSort_rec(arr, 0, n - 1);
+void quickSortMedian(int *arr, unsigned int n){
+    quickSortMedian_rec(arr, 0, n - 1);
 }
