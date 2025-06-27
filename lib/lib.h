@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 
 typedef struct timespec timespec;
@@ -35,6 +36,7 @@ int write_logfile(char *name, double *times, unsigned int n, unsigned int parame
 void countingSort(int *arr, unsigned int n);
 void mergeSort(int *arr, unsigned int n);
 void quickSort(int *arr, unsigned int n);
+void quickSortRand(int *arr, unsigned int n);
 void quickSortMedian(int *arr, unsigned int n);
 void quickSort3Way(int *arr, unsigned int n);
 void insertionSort(int *arr, unsigned int n);
