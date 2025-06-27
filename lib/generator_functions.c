@@ -32,6 +32,31 @@ int* gen_array_by_different_elements(int n){
     return arr;
 }
 
+int* gen_array_sorted(int len){
+    int *arr = calloc(len+1, sizeof(int));
+    for (int i = 0; i < len; i++) {
+        arr[i] = i;
+    }
+    arr[len]=(int)'\0';
+    return arr;
+}
+
+int* gen_array_reverse_sorted(int len){
+    int *arr = calloc(len+1, sizeof(int));
+    for (int i = len-1; i >= 0; i--) {
+        arr[i] = len-i;
+    }
+    arr[len]=(int)'\0';
+    return arr;
+}
+
+void debug_print_array(int *a, int len){
+    puts("[");
+    for(int i=0; i<len; i++) printf(" %d", a[i]);
+    puts(" ]");
+    return;
+}
+
 int arr_len(int *arr){
     int i = 0;
     while (arr[i] != (int)'\0') {

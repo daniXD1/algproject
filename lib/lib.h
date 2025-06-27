@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <stdbool.h>
 #include <time.h>
 
 
@@ -28,6 +29,12 @@ int* gen_array_by_value_range(int range);
 int* gen_array_by_different_elements(int n);
 #define GEN_ARRAY_DIFFERENT 2
 
+int* gen_array_sorted(int len);
+#define GEN_ARRAY_SORTED 3
+
+int* gen_array_reverse_sorted(int len);
+#define GEN_ARRAY_REVERSE_SORTED 4
+
 int arr_len(int *arr);
 
 void write_dataline(FILE *file, double time);
@@ -36,11 +43,12 @@ int write_logfile(char *name, double *times, unsigned int n, unsigned int parame
 void countingSort(int *arr, unsigned int n);
 void mergeSort(int *arr, unsigned int n);
 void quickSort(int *arr, unsigned int n);
-void quickSortRand(int *arr, unsigned int n);
 void quickSortMedian(int *arr, unsigned int n);
 void quickSort3Way(int *arr, unsigned int n);
 void insertionSort(int *arr, unsigned int n);
 void heapSort(int *arr, unsigned int n);
+
+void quickSortMedianPartial(int *arr, unsigned int n);
 
 void swap(int* a, int* b);
 
