@@ -28,7 +28,7 @@ int* gen_array_by_different_elements(int n){
     for (int i = 0; i < static_array_len; i++) {
         arr[i] = rnd_elements[rand() % n];
     }
-    arr[n]=(int)'\0';
+    arr[static_array_len]=(int)'\0';
     return arr;
 }
 
