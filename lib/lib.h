@@ -44,6 +44,7 @@ void countingSort(int *arr, unsigned int n);
 void mergeSort(int *arr, unsigned int n);
 void quickSort(int *arr, unsigned int n);
 void quickSortMedian(int *arr, unsigned int n);
+void quickSortMedianOptimized(int *arr, unsigned int n);
 void quickSort3Way(int *arr, unsigned int n);
 void insertionSort(int *arr, unsigned int n);
 void heapSort(int *arr, unsigned int n);
