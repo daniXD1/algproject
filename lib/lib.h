@@ -3,8 +3,9 @@
 
 #define _POSIX_C_SOURCE 199309L
 
-#define static_array_len 10000
+#define static_array_len 100000
 #define static_array_range 1000000
+//#define static_array_range __INT_MAX__
 
 #include <stdio.h>
 #include <stdlib.h>
