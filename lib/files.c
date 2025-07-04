@@ -10,7 +10,7 @@ void write_dataline_ahh(FILE *file, double time, int data) {
 }
 
 int write_logfile(char *name, double *times, unsigned int n, unsigned int parameter, unsigned short generator_function){
-    if(generator_function > 2){
+    if(generator_function > 5){
         puts("Invalid generator function");
         return -1;
     }
@@ -23,16 +23,26 @@ int write_logfile(char *name, double *times, unsigned int n, unsigned int parame
 
     fprintf(f, "Batch size: %u\n", n);
     fprintf(f, "Parameter: %u\n", parameter);
+
     switch(generator_function){
-        case 0:
+        case GEN_ARRAY_SIMPLE:
             fprintf(f, "Generator: Simple\n");
             break;
-        case 1:
+        case GEN_ARRAY_RANGE:
             fprintf(f, "Generator: Range\n");
             break;
-        case 2:
+        case GEN_ARRAY_DIFFERENT:
             fprintf(f, "Generator: Different\n");
             break;
+        case GEN_ARRAY_SORTED:
+            fprintf(f, "Generator: Sorted\n");
+            break;
+        case GEN_ARRAY_REVERSE_SORTED:
+            fprintf(f, "Generator: Reverse\n");
+            break;
+        default:
+            printf("Invalid generator index\n");
+            return -1;
     }
     for(int i=0; i<n; i++){
         write_dataline(f, times[i]);

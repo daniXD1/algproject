@@ -67,7 +67,7 @@ def read_data(dir, alg):
 
     for file in files:
         file_path = os.path.join(dir, file)
-        if not os.path.isfile(file_path) or not file.endswith('.txt') or not file.startswith(f'log-{alg}'):
+        if not os.path.isfile(file_path) or not file.endswith('.txt') or not file.startswith(f'log-{alg}-'):
             continue
         
         with open(file_path, 'r') as f:
@@ -137,7 +137,7 @@ def main():
 
 
     plt.legend()
-    plt.xlabel('Parameter')
+    plt.xlabel('Array Length')
     plt.ylabel('Average Time')
     plt.title(args.title)
     plt.grid(True)
