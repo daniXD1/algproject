@@ -65,7 +65,7 @@ int Select(int arr[], int low, int high, int position){
     int size = high - low + 1;
 
     if (size <= 5) {
-        return findMedian(arr, low, size);
+        return findMedianSelect(arr, low, size);
     }
 
     int numGroups = ceil(size / N_GROUPS);

@@ -1,5 +1,12 @@
 #include "../lib.h"
+#include <math.h>
 #define N_GROUPS 5
+
+int pow_manual(int base, int exp){
+    int r=base;
+    for(int i=1; i<exp; i++)r*=base;
+    return r;
+}
 
 int firstOccurrenceOptimized(int arr[], int low, int high, int value) {
     int i = low;
@@ -116,7 +123,7 @@ void quickSortMedianOptimized_rec(int arr[], int low, int high, int levelOfMedia
 
 int getMaxMedianLevel(unsigned int  n) {
     int i;
-    for (i = 0; pow(2,i) < n; i++){
+    for (i = 0; pow_manual(2,i) < n; i++){
 
     }
 

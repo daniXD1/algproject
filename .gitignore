@@ -1,6 +1,6 @@
-./.vscode
 ./.vscode/*
 out/
-.vscode/settings.json
 lib/lib.so
 *.o
+
+src/
