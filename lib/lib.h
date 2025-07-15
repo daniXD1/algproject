@@ -20,6 +20,9 @@ double getResolution();
 
 double measure_function_run(void (*f)(int *, unsigned int), int *arr, int len);
 double* measure_batch(void (*f)(int *, unsigned int), unsigned int parameter, unsigned int batch_size, int * (*generator_function)(int));
+double* measure_batch_gen_included(void (*f)(int *, unsigned int), unsigned int parameter, unsigned int batch_size, int * (*generator_function)(int), int system_resolution);
+
+double duration(timespec start, timespec end);
 
 int* gen_array_simple(int len);
 #define GEN_ARRAY_SIMPLE 0
