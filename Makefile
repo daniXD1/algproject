@@ -6,5 +6,8 @@ build_chronometer: chronometer.c
 run:
 	LD_LIBRARY_PATH=./lib ./out/chronometer
 
+pdf:
+	pandoc relation.md -o relation.pdf
+
 clean:
 	rm -f ./out/*
