@@ -24,9 +24,6 @@ int main(){
         case GEN_ARRAY_SIMPLE:
             generator_function = gen_array_simple;
             break;
-        case GEN_ARRAY_RANGE:
-            generator_function = gen_array_by_value_range;
-            break;
         case GEN_ARRAY_DIFFERENT:
             generator_function = gen_array_by_different_elements;
             exponential_step = 1.047128548050899533464502031528140079056791471503929212005652529901257764102372;

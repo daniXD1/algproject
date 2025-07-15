@@ -9,15 +9,6 @@ int* gen_array_simple(int len){
     return arr;
 }
 
-int* gen_array_by_value_range(int range){
-    int *arr = calloc(static_array_len+1, sizeof(int));
-    for (int i = 0; i < static_array_len; i++) {
-        arr[i] = (rand() % range);
-    }
-    arr[static_array_len]=(int)'\0';
-    return arr;
-}
-
 int* gen_array_by_different_elements(int n){
     int *rnd_elements = calloc(n+1, sizeof(int));
     int *arr = calloc(static_array_len, sizeof(int));

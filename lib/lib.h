@@ -27,17 +27,14 @@ double duration(timespec start, timespec end);
 int* gen_array_simple(int len);
 #define GEN_ARRAY_SIMPLE 0
 
-int* gen_array_by_value_range(int range);
-#define GEN_ARRAY_RANGE 1
-
 int* gen_array_by_different_elements(int n);
-#define GEN_ARRAY_DIFFERENT 2
+#define GEN_ARRAY_DIFFERENT 1
 
 int* gen_array_sorted(int len);
-#define GEN_ARRAY_SORTED 3
+#define GEN_ARRAY_SORTED 2
 
 int* gen_array_reverse_sorted(int len);
-#define GEN_ARRAY_REVERSE_SORTED 4
+#define GEN_ARRAY_REVERSE_SORTED 3
 
 int arr_len(int *arr);
 

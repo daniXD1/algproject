@@ -28,9 +28,6 @@ int write_logfile(char *name, double *times, unsigned int n, unsigned int parame
         case GEN_ARRAY_SIMPLE:
             fprintf(f, "Generator: Simple\n");
             break;
-        case GEN_ARRAY_RANGE:
-            fprintf(f, "Generator: Range\n");
-            break;
         case GEN_ARRAY_DIFFERENT:
             fprintf(f, "Generator: Different\n");
             break;
