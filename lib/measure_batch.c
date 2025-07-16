@@ -18,8 +18,10 @@ double* measure_batch_gen_included(void (*f)(int *, unsigned int), unsigned int 
 
     for (unsigned int i = 0; i < batch_size; i++) {
         timespec start, end;
+        int cnt = 0;
         clock_gettime(CLOCK_MONOTONIC, &start);
         while(true){
+            cnt++;
             int* arr = ((int* (*)(int))generator_function)(parameter);
             ((void (*)(int *, unsigned int))f)(arr, arr_len(arr));
             clock_gettime(CLOCK_MONOTONIC, &end);
@@ -27,7 +29,7 @@ double* measure_batch_gen_included(void (*f)(int *, unsigned int), unsigned int 
             free(arr);
         }
         
-        results[i] = duration(start, end);
+        results[i] = duration(start, end)/cnt;
     }
     
     return results;
